@@ -9,6 +9,7 @@ public class Aircraft : MonoBehaviour, IDestroyed
     private MoveEquation _moveEquation;
     private float _startTime;
     private GameObject _targetPoint;
+    private Collider _collider;
 
     public event Action SpawnNext;
     public event Action Destoyed;
@@ -18,6 +19,7 @@ public class Aircraft : MonoBehaviour, IDestroyed
     private void Awake()
     {
         Gun.Aircraft = this;
+        _collider = this.gameObject.GetComponent<Collider>();
     }
 
     private void Start()
@@ -40,6 +42,7 @@ public class Aircraft : MonoBehaviour, IDestroyed
         Destoyed?.Invoke();
         StartCoroutine(Waiter.WaiteCoroutine(() => Destroy(this.gameObject), 0.5f));
         this.enabled = false;
+        _collider.enabled = false;
     }
 
     public Vector3 GetPositionOnTime(float time)
@@ -67,6 +70,7 @@ public class Aircraft : MonoBehaviour, IDestroyed
 
     private void CreateNextAircraft()
     {
+        _collider.enabled = false;
         SpawnNext?.Invoke();
         SpawnNext = null;
         Destoyed?.Invoke();

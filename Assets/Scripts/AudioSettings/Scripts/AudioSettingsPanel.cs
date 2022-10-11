@@ -19,7 +19,9 @@ public class AudioSettingsPanel : MonoBehaviour
 
     void Start()
     {
-        this.gameObject.SetActive(false);
+        this.gameObject.SetActive(false); 
+        _musicManager.GetAudioSource.volume = _volumeMusicSlider.value;
+        _soundManager.volume = _volumeSoundSlider.value;
     }
 
     public void SetMusicVolume() => _musicManager.GetAudioSource.volume = _volumeMusicSlider.value;
