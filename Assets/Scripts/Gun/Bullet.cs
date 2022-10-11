@@ -15,7 +15,11 @@ public class Bullet : MonoBehaviour, IDestroyed
     private void OnCollisionEnter(Collision collision)
     {
         AudioController.SoundManager.PlayAudioClip("Explosion");
-        Destoyed?.Invoke();
         Destroy(this.gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        Destoyed?.Invoke();
     }
 }

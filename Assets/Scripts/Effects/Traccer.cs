@@ -12,6 +12,7 @@ public class Traccer : MonoBehaviour
         {
             _target = null;
             particleSystem.enableEmission = false;
+            this.enabled = false;
         };
     }
 
@@ -23,8 +24,7 @@ public class Traccer : MonoBehaviour
 
     private void Update()
     {
-        if (_target != null && _target.Position != null)
-            transform.position = _target.Position;
+        transform.position = _target.Position;
     }
 
     public void SetColor(Color color)

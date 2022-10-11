@@ -36,6 +36,7 @@ public class Aircraft : MonoBehaviour, IDestroyed
     private void OnCollisionEnter(Collision collision)
     {
         SpawnNext?.Invoke();
+        SpawnNext = null;
         Destoyed?.Invoke();
         StartCoroutine(Waiter.WaiteCoroutine(() => Destroy(this.gameObject), 0.5f));
         this.enabled = false;
@@ -67,8 +68,8 @@ public class Aircraft : MonoBehaviour, IDestroyed
     private void CreateNextAircraft()
     {
         SpawnNext?.Invoke();
+        SpawnNext = null;
         Destoyed?.Invoke();
         StartCoroutine(Waiter.WaiteCoroutine(() => Destroy(this.gameObject), 3f));
-        SpawnNext = null;
     }
 }
