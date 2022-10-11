@@ -1,0 +1,10 @@
+ManifestFileVersion: 0
+CRC: 118966902
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: musics
+      Dependencies: {}
+    Info_1:
+      Name: sounds
+      Dependencies: {}

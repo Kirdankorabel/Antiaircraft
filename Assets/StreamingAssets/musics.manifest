@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 4034977736
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 971052ba4706dbec1fd4458e735edcc6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9a2ca7bdbd1871f7131daf57de908e0c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resourses/Music/Twisted_Sister_-_I_Wanna_Rock_[mp3pulse.ru].mp3
+- "Assets/Resourses/Music/Helloween \u2014 A Tale That Wasn't Right.mp3"
+- Assets/Resourses/Music/System_of_a_Down_-_Chop_Suey_[mp3pulse.ru].mp3
+Dependencies: []
