@@ -23,7 +23,7 @@ public class Traccer : MonoBehaviour
 
     private void Update()
     {
-        if (_target != null)
+        if (_target != null && _target.Position != null)
             transform.position = _target.Position;
     }
 

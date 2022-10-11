@@ -17,7 +17,7 @@ public class Aircraft : MonoBehaviour, IDestroyed
 
     private void Awake()
     {
-        GameConlroller.Aircraft = this;
+        Gun.Aircraft = this;
     }
 
     private void Start()
@@ -29,7 +29,6 @@ public class Aircraft : MonoBehaviour, IDestroyed
     void FixedUpdate()
     {
         Move();
-
         if (transform.position.x < 0) 
             CreateNextAircraft();
     }
