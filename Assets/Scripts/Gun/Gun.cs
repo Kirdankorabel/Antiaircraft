@@ -8,7 +8,7 @@ public class Gun : MonoBehaviour
     private Vector3 _position;
     private MoveEquation _parabolicEquation;
 
-    public static Aircraft Aircraft { get; set; }
+    public static Aircraft TargetAircraft { get; set; }
     public static float Time { get; set; }
 
     private void Start()
@@ -26,10 +26,10 @@ public class Gun : MonoBehaviour
 
     private Vector3 GetDirection()
     {
-        if (Aircraft == null)
+        if (TargetAircraft == null)
             return transform.forward;
         
-        var direction = transform.position + Aircraft.transform.position;
+        var direction = transform.position + TargetAircraft.transform.position;
         float time;
         Vector3 delta;
         Vector3 position;
@@ -38,7 +38,7 @@ public class Gun : MonoBehaviour
         {
             time = direction.magnitude / _speed;
             position = transform.position + _speed * direction.normalized * time + Physics.gravity * time * time / 2f;
-            delta = position - Aircraft.GetPositionOnTime(time);
+            delta = position - TargetAircraft.GetPositionOnTime(time);
             if (Mathf.Abs(delta.magnitude) < 0.1f)
             {
                 Time = time;

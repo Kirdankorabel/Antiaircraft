@@ -24,5 +24,6 @@ public class AircraftCreator : MonoBehaviour
         aircraft.SetTargetPoint(_targetPoint);
         aircraft.SetMoveEducation(_moveEducation);
         aircraft.SpawnNext += () => StartCoroutine(Waiter.WaiteCoroutine(() => Spawn(), 1f));
+        Gun.TargetAircraft = aircraft;
     }
 }

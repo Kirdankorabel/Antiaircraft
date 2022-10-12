@@ -18,7 +18,6 @@ public class Aircraft : MonoBehaviour, IDestroyed
 
     private void Awake()
     {
-        Gun.Aircraft = this;
         _collider = this.gameObject.GetComponent<Collider>();
     }
 
